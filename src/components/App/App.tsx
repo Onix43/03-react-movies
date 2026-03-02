@@ -16,14 +16,17 @@ function App() {
   const [isError, setIsError] = useState<boolean>(false);
   const [movies, setMovies] = useState<Movie[]>([]);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [modalMovie, setModalMovie] = useState<Movie>();
+  const [modalMovie, setModalMovie] = useState<Movie | null>(null);
 
   const openModal = (movie: Movie) => {
     setModalMovie(movie);
     setIsModalOpen(true);
   };
 
-  const closeModal = () => setIsModalOpen(false);
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setModalMovie(null);
+  };
 
   const handleSearch = async (data: string) => {
     try {

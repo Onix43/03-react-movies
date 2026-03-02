@@ -1,7 +1,7 @@
 import axios from "axios";
 import type { Movie } from "../types/movie";
 interface MovieFetch {
-  page: string;
+  page: number;
   results: Movie[];
 }
 

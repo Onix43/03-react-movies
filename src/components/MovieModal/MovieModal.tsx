@@ -3,12 +3,12 @@ import { createPortal } from "react-dom";
 import css from "./MovieModal.module.css";
 import { useEffect } from "react";
 
-interface MovieModal {
+interface MovieModalProps {
   onClose: () => void;
   movie: Movie;
 }
 
-export default function MovieModal({ onClose, movie }: MovieModal) {
+export default function MovieModal({ onClose, movie }: MovieModalProps) {
   const moviePath = `https://image.tmdb.org/t/p/original/`;
 
   const handleBackdropClick = (event: React.MouseEvent<HTMLDivElement>) => {
